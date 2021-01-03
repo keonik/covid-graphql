@@ -1,8 +1,16 @@
 {
   "name": "covid-graphql",
   "version": "1.0.0",
-  "description": "Learning tool to showcase REST to GraphQL for blog posts",
+  "description": "Covid Act Now GraphQL API",
   "main": "index.js",
+  "contributors": [
+    {
+      "email": "john.k.fay@gmail.com",
+      "name": "John Fay",
+      "url": "https://github.com/keonik"
+    }
+  ],
+  "publisher": "John Fay",
   "scripts": {
     "dev": "nodemon src/index.js --watch src/",
     "start": "node src/index.js",

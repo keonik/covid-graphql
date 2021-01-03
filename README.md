@@ -3,7 +3,7 @@
 
 # Covid Act Now GraphQL API
 
-Utilizing the [Covid Act Now API](https://covidactnow.org/tools) and [Apollo GraphQL](apollographql.com) to share a REST API as a data source in GraphQL.
+Utilizing the [Covid Act Now API](https://covidactnow.org/tools) and [Apollo GraphQL](https://apollographql.com) to share a REST API as a data source in GraphQL.
 
 You can view the playground [here](http://covid-act-now-graphql.herokuapp.com/)
 

@@ -12,6 +12,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   playground: true,
+  introspection: true,
 });
 
 server.listen(process.env.PORT || 9000).then(() => {

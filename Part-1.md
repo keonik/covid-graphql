@@ -1,4 +1,4 @@
-These are rough outline notes to recall where I've been adding in a step. If you're looking for a better explanation stay tuned for the blog links on the bottom of the [readme](./ReadMe.md)
+These are rough outline notes to recall where I've been adding in a step. If you're looking for a better explanation stay tuned for the blog links on the bottom of the [readme](./README.md)
 
 1. Make a repository or folder to structure the project
 2. npm init -y

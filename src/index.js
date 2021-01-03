@@ -13,6 +13,6 @@ const server = new ApolloServer({
   resolvers,
 });
 
-server.listen(9000).then(() => {
+server.listen(process.env.PORT || 9000).then(() => {
   console.log("server running 🔥 http://localhost:9000");
 });

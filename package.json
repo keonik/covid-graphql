@@ -1,0 +1,28 @@
+{
+  "name": "covid-graphql",
+  "version": "1.0.0",
+  "description": "Learning tool to showcase REST to GraphQL for blog posts",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js --watch src/",
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keonik/covid-graphql.git"
+  },
+  "keywords": [],
+  "author": "John Fay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keonik/covid-graphql/issues"
+  },
+  "homepage": "https://github.com/keonik/covid-graphql#readme",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.9.6",
+    "apollo-server": "^2.19.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  }
+}

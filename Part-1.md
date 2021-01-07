@@ -57,9 +57,9 @@ These are rough outline notes to recall where I've been adding in a step. If you
    const typeDefs = require("./schema");
 
    const server = new ApolloServer({ typeDefs });
-
-   server.listen(9000).then(() => {
-     console.log("server running 🔥 http://localhost:9000");
+   const port = process.env.port || 9000;
+   server.listen(port).then(() => {
+     console.log(`server running 🔥 http://localhost:${port}`);
    });
    ```
 

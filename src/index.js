@@ -16,5 +16,5 @@ const server = new ApolloServer({
 });
 
 server.listen(process.env.PORT || 9000).then(() => {
-  console.log("server running 🔥 http://localhost:9000");
+  console.log("server running 🚀 http://localhost:9000");
 });

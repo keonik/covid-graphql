@@ -25,6 +25,7 @@ const typeDefs = gql`
   }
 
   type State {
+    counties: [County]
     fips: String
     country: String
     state: String

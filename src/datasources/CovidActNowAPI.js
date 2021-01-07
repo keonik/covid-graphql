@@ -12,10 +12,15 @@ class CovidActNowAPI extends RESTDataSource {
   }
 
   async getState(stateCode) {
-    const response = await this.get(
+    const state = await this.get(
       `state/${stateCode}.timeseries.json?apiKey=${process.env.COVID_ACT_NOW}`
     );
-    return response;
+    const counties = await this.get(`counties.json?apiKey=${process.env.COVID_ACT_NOW}`);
+
+    return {
+      ...state,
+      counties: counties.filter(({ state: stateCode }) => stateCode === state.state),
+    };
   }
 
   async getAllCounties() {

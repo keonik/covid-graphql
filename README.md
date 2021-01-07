@@ -32,3 +32,4 @@ npm run dev
 # Blog Posts
 
 [Understanding GraphQL through REST](https://johnfay.dev/blog/understanding-graphql/)
+[Creating a GraphQL API while utilizing your REST API](https://johnfay.dev/blog/creating-graphql-api-using-rest-api)

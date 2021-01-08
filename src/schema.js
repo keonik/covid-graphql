@@ -9,34 +9,34 @@ const typeDefs = gql`
   }
 
   type County {
-    fips: String
-    country: String
-    state: String
-    county: String
-    population: Int
-    metrics: Metric
-    riskLevels: RiskLevel
-    actuals: Actual
+    fips: String!
+    country: String!
+    state: String!
+    county: String!
+    population: Int!
+    metrics: Metric!
+    riskLevels: RiskLevel!
+    actuals: Actual!
     lastUpdatedDate: String
-    url: String
-    metricsTimeseries: [Metric]
-    actualsTimeseries: [Actual]
-    riskLevelsTimeseries: [RiskLevel]
+    url: String!
+    metricsTimeseries: [Metric!]
+    actualsTimeseries: [Actual!]
+    riskLevelsTimeseries: [RiskLevel!]
   }
 
   type State {
-    counties: [County]
-    fips: String
-    country: String
-    state: String
-    population: Int
-    metrics: Metric
-    riskLevels: RiskLevel
-    actuals: Actual
+    counties: [County!]
+    fips: String!
+    country: String!
+    state: String!
+    population: Int!
+    metrics: Metric!
+    riskLevels: RiskLevel!
+    actuals: Actual!
     lastUpdatedDate: String
-    url: String
-    metricsTimeseries: [Metric]
-    actualsTimeseries: [Actual]
+    url: String!
+    metricsTimeseries: [Metric!]
+    actualsTimeseries: [Actual!]
   }
 
   type Metric {
@@ -71,14 +71,14 @@ const typeDefs = gql`
   }
 
   type Actual {
-    cases: Int
-    deaths: Int
+    cases: Int!
+    deaths: Int!
     positiveTests: Int
     negativeTests: Int
     contactTracers: Float
     hospitalBeds: HospitalBed
     icuBeds: ICUBed
-    newCases: Int
+    newCases: Int!
     date: String
   }
 

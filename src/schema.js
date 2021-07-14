@@ -18,7 +18,7 @@ const typeDefs = gql`
     riskLevels: RiskLevel!
     actuals: Actual!
     lastUpdatedDate: String
-    url: String!
+    url: String
     metricsTimeseries: [Metric!]
     actualsTimeseries: [Actual!]
     riskLevelsTimeseries: [RiskLevel!]
@@ -29,6 +29,7 @@ const typeDefs = gql`
     fips: String!
     country: String!
     state: String!
+    level: String!
     population: Int!
     metrics: Metric!
     riskLevels: RiskLevel!
@@ -48,6 +49,8 @@ const typeDefs = gql`
     icuHeadroomRatio: Float
     icuHeadroomDetails: ICUHeadroomDetails
     icuCapacityRatio: Float
+    vaccinationsInitiatedRatio: Float
+    vaccinationsCompletedRatio: Float
     date: String
   }
 
@@ -56,7 +59,6 @@ const typeDefs = gql`
     currentIcuCovidMethod: String
     currentIcuNonCovid: Int
     currentIcuNonCovidMethod: String
-    icuCapacityRatio: Float
   }
 
   type RiskLevel {
@@ -67,18 +69,22 @@ const typeDefs = gql`
     infectionRate: Float
     icuHeadroomRatio: Float
     icuCapacityRatio: Float
-    date: String
   }
 
   type Actual {
-    cases: Int!
-    deaths: Int!
+    cases: Int
+    deaths: Int
     positiveTests: Int
     negativeTests: Int
     contactTracers: Float
     hospitalBeds: HospitalBed
     icuBeds: ICUBed
-    newCases: Int!
+    newCases: Int
+    newDeaths: Int
+    vaccinesDistributed: Int
+    vaccinationsInitiated: Int
+    vaccinationsCompleted: Int
+    vaccinesAdministered: Int
     date: String
   }
 

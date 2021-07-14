@@ -1,5 +1,5 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
-
+const fs = require("fs");
 class CovidActNowAPI extends RESTDataSource {
   constructor() {
     super();
@@ -7,7 +7,10 @@ class CovidActNowAPI extends RESTDataSource {
   }
 
   async getAllStates() {
-    const response = await this.get(`states.json?apiKey=${process.env.COVID_ACT_NOW}`);
+    const response = await this.get(
+      `states.json?apiKey=${process.env.COVID_ACT_NOW}`
+    );
+
     return response || [];
   }
 
@@ -15,16 +18,21 @@ class CovidActNowAPI extends RESTDataSource {
     const state = await this.get(
       `state/${stateCode}.timeseries.json?apiKey=${process.env.COVID_ACT_NOW}`
     );
-    const counties = await this.get(`counties.json?apiKey=${process.env.COVID_ACT_NOW}`);
-
+    const counties = await this.get(
+      `counties.json?apiKey=${process.env.COVID_ACT_NOW}`
+    );
     return {
       ...state,
-      counties: counties.filter(({ state: stateCode }) => stateCode === state.state),
+      counties: counties.filter(
+        ({ state: stateCode }) => stateCode === state.state
+      ),
     };
   }
 
   async getAllCounties() {
-    const response = await this.get(`counties.json?apiKey=${process.env.COVID_ACT_NOW}`);
+    const response = await this.get(
+      `counties.json?apiKey=${process.env.COVID_ACT_NOW}`
+    );
     return response || [];
   }
 
@@ -32,6 +40,8 @@ class CovidActNowAPI extends RESTDataSource {
     const response = await this.get(
       `county/${fips}.timeseries.json?apiKey=${process.env.COVID_ACT_NOW}`
     );
+    fs.writeFileSync("temp.json", JSON.stringify(response));
+
     return response;
   }
 }

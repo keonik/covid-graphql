@@ -1,5 +1,4 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
-const fs = require("fs");
 class CovidActNowAPI extends RESTDataSource {
   constructor() {
     super();
@@ -40,8 +39,6 @@ class CovidActNowAPI extends RESTDataSource {
     const response = await this.get(
       `county/${fips}.timeseries.json?apiKey=${process.env.COVID_ACT_NOW}`
     );
-    fs.writeFileSync("temp.json", JSON.stringify(response));
-
     return response;
   }
 }

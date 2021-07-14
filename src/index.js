@@ -1,6 +1,9 @@
 require("dotenv").config();
 
 const { ApolloServer } = require("apollo-server");
+const {
+  ApolloServerPluginLandingPageGraphQLPlayground,
+} = require("apollo-server-core");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
 const CovidActNowAPI = require("./datasources/CovidActNowAPI");
@@ -11,7 +14,12 @@ const server = new ApolloServer({
   }),
   typeDefs,
   resolvers,
-  playground: true,
+  plugins: [
+    ApolloServerPluginLandingPageGraphQLPlayground({
+      // options
+      title: "Covid Act Now GraphQL API",
+    }),
+  ],
   introspection: true,
 });
 

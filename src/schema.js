@@ -22,6 +22,10 @@ const typeDefs = gql`
     metricsTimeseries: [Metric!]
     actualsTimeseries: [Actual!]
     riskLevelsTimeseries: [RiskLevel!]
+    vaccinesDistributed: Int
+    vaccinationsInitiated: Int
+    vaccinationsCompleted: Int
+    vaccinesAdministered: Int
   }
 
   type State {
@@ -38,6 +42,10 @@ const typeDefs = gql`
     url: String!
     metricsTimeseries: [Metric!]
     actualsTimeseries: [Actual!]
+    vaccinesDistributed: Int
+    vaccinationsInitiated: Int
+    vaccinationsCompleted: Int
+    vaccinesAdministered: Int
   }
 
   type Metric {
@@ -92,14 +100,12 @@ const typeDefs = gql`
     capacity: Int
     currentUsageTotal: Int
     currentUsageCovid: Int
-    typicalUsageRate: Float
   }
 
   type ICUBed {
     capacity: Int
     currentUsageTotal: Int
     currentUsageCovid: Int
-    typicalUsageRate: Float
   }
 `;
 

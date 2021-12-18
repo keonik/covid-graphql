@@ -1,4 +1,5 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
+const fs = require("fs");
 class CovidActNowAPI extends RESTDataSource {
   constructor() {
     super();
